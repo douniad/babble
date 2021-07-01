@@ -1,0 +1,24 @@
+.landing-page {
+    @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+    font-family: 'Akaya Kanadaka', cursive;
+    background-color: #FFE5E2;
+}
+h1 {
+   
+    height: 100px;
+    text-decoration: none;
+    color: #B6C9F0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+
+}
+
+link:visited {
+    text-decoration: none;
+}
