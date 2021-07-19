@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import AuthApiService from '../Services/Auth-Api-Service'
 import { Button, Input } from '../Utils/Utils'
 import BabbleContext from '../BabbleContext'
+import {NavLink} from 'react-router-dom'
+import './Login.css'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -34,6 +36,7 @@ static contextType = BabbleContext
   render() {
     const { error } = this.state
     return (
+      <div className="logindiv">
       <form
         className='LoginForm'
         onSubmit={this.handleSubmitJwtAuth}
@@ -57,15 +60,19 @@ static contextType = BabbleContext
           </label>
           <Input
             required
+            className="LastLabel"
             name='password'
             type='password'
             id='LoginForm__password'>
           </Input>
         </div>
-        <Button type='submit'>
+        <Button className="buttonlogin" type='submit'>
           Login
         </Button>
       </form>
+<p>Don't have an account yet? <NavLink to={'/register'}>Register</NavLink></p>
+      </div>
     )
   }
 }
+

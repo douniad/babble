@@ -1,0 +1,58 @@
+
+.navtry {
+    height: 5rem;
+    display: flex;
+}
+
+h1, h1 a {    
+    color: #3C5186;
+  
+    text-decoration-color:  #9B72AA;;
+    text-decoration-style:dotted;
+  
+
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    margin: 4rem auto 3rem auto;
+    font-size: 5rem;
+
+}
+
+
+h2 {
+    color: #3C5186;
+    text-align: center;
+    font-family: 'Arima Madurai', cursive;
+    padding-bottom: 2rem;
+}
+.firstpage {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.registerbutton, .loginbutton {
+text-decoration: none;
+margin-top: 50px;
+padding: 1rem 2rem;
+border-radius: 12px;
+background-color: #FFF5DE ;
+border:5px solid #C6B4CE;
+
+font-family: 'Arima Madurai', cursive;
+color: #3C5186;
+font-weight: bolder;
+}
+
+
+.registerbutton:hover, .loginbutton:hover {
+    background-color: #C6B4CE;
+    border: 3px solid #C6B4CE;
+
+}
+
+.linknoline {
+    text-decoration: none;
+}
+

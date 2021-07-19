@@ -1,3 +1,30 @@
-.App {
-  background-color: #FFE5E2;
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100&family=Comfortaa:wght@700&display=swap');
+body {
+  background-color: #FFF5DE;
+  cursor: pointer;
+}
+
+.LastLabel {
+  margin-bottom: 15px;
+}
+
+Button {
+  display: flex;
+  text-align: center;
+padding: 10px 12px;
+border-radius: 8px;
+background-color: #FFF5DE ;
+border:3px solid #9B72AA;;
+font-family: 'Arima Madurai', cursive;
+color: #3C5186;
+font-weight: bolder;
+}
+
+Button a {
+  text-decoration: none;
+}
+
+Button:hover {
+  background-color: #C6B4CE;
+  border: 3px solid #C6B4CE;
 }

@@ -17,7 +17,11 @@ import TokenService from '../Services/Token-Service'
 import IdleService from '../Services/Idle-Service'
 import AuthApiService from '../Services/Auth-Api-Service'
 import Nav from '../Nav/Nav'
-import Header from '../Header/Header'
+import Header from '../Header/Header';
+
+import './App.css'
+import Update from '../Update/Update'
+
 
 const { v4: uuidv4 } = require('uuid')
 
@@ -82,6 +86,21 @@ class App extends Component {
             .then(res => {
                 this.setState({
                     children: this.state.children.concat(res)
+                })
+            })
+    }
+
+    removeChild = (id) => {
+        console.log('hello')
+        fetch(config.API_ENDPOINT + `/children/${id}`, {
+            method: 'delete',
+            headers: {
+                'authorization': `Bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(res => {
+                this.setState({
+                    children: this.state.children.filter(child => child.id !== id)
                 })
             })
     }
@@ -156,7 +175,8 @@ class App extends Component {
             deleteUpdate: this.deleteUpdate,
             setUpdates: this.setUpdates,
             setChildren: this.setChildren,
-            setUser: this.setUser
+            setUser: this.setUser,
+            removeChild: this.removeChild,
 
         }
 
@@ -164,51 +184,28 @@ class App extends Component {
         return (
             <BabbleContext.Provider value={value}>
 
-                {this.state.user ? <Nav /> : <Header />}
+                
 
                 <div className="big-container">
-                    <nav>
-                        <PrivateRoute path="/updates/updateId" render={(routeProps) => {
-                            const updateId = routeProps.match.params.updateId
-                            const selectedUpdate = this.state.updates.find(update => update.id === parseInt(updateId)) || {}
-                            const selectedChild = this.state.children.find(child => child.id === selectedUpdate.childId) || {}
+                   
+                    
+                    {this.state.user ? <Nav /> : <Header/> }
 
-                            return <ExitUpdate childName={selectedChild.name} {...routeProps} />
-                        }}
-                        />
-
-                        <PrivateRoute path="/children/childId" render={(routeProps) => {
-                            const childId = routeProps.match.params.childId
-                            const selectedChild = this.state.children.find(child => child.id === childId)
-                            return <ChildBoard children={this.state.children} selectedChild={selectedChild.name} {...routeProps} />
-                        }}
-                        />
-                        <Route path={'/nav'} component={Nav} />
-                        <PrivateRoute exact path="childboard" render={() =>
-                            <ChildBoard children={this.state.children} />
-                        }
-                        />
-
-                    </nav>
+                    
 
                     <main>
-                        <PrivateRoute path="/updates/updateId" render={(routeProps) => {
+                    <Route exact path="/childboard" render={() => 
+                        <ChildBoard children={this.state.children} />}/>
+
+                        <PrivateRoute path="/updates/:updateId" render={(routeProps) => {
                             const updateId = routeProps.match.paramsms.updateId
                             const selectedUpdate = this.state.updates.find(update => update.id === parseInt(updateId)) || {}
-                            return <ClickUpdate selectedUpdate={selectedUpdate} {...routeProps}
+                            return <ExitUpdate selectedUpdate={selectedUpdate} {...routeProps}
                             />
                         }}
                         />
-                        <PrivateRoute path="/children/update/childId" render={(routeProps) => {
-                            const childId = routeProps.match.params.childId
-                            const selectedChild = this.state.children.find(child => child.id === parseInt(childId)) || {}
-                            const updatesInChild = this.state.updates.filter(update => {
-                                return update.childId === selectedChild.id
-                            })
-
-                            return <UpdateBoard updates={updatesInChild} {...routeProps}
-                            />
-                        }}
+                       <PrivateRoute path="/children/:childId" component={Update}
+                            
                         />
                         <PrivateRoute exact path="/updateboard" render={() =>
                             <UpdateBoard updates={this.state.updates}
@@ -220,7 +217,8 @@ class App extends Component {
                         <PublicOnlyRoute path={'/register'} component={Register} />
                         <PrivateRoute path={'/addchild'} component={AddChild} />
                         <PrivateRoute path={'/addupdate'} component={AddUpdate} />
-                        <PrivateRoute path={'/childboard'} component={ChildBoard} />
+                        <PrivateRoute path={'/updateboard'} component={AddUpdate}/>
+ 
                     </main>
                 </div>
 

@@ -1,19 +1,25 @@
-.Header {
-    height: 40px;
+.navigationbar {
+  background-color: #C6B4CE;
+    height: 100 px;
     display: flex;
     align-items: normal;
     justify-content: space-between;
   }
   
-  .Header h1 {
+  .navigationbar h1 {
     margin: 0;
-  }
   
-  .Header h1 a {
+  }
+
+  
+  .navigationbar h1 a {
     text-decoration: none;
+    color: #FFF5DE;
+    height: 15px;
+    width: 20px;
   }
   
-  .Header a {
+  .navigationbar a {
     color: #444;
   }
   

@@ -1,22 +1,31 @@
 import React, {Component} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import BabbleContext from '../BabbleContext'
+import Child from '../Child/Child'
+import PropTypes from 'prop-types'
+import AddUpdate from '../AddUpdate/AddUpdate'
 
 class Update extends Component {
     static contextType = BabbleContext
 
     afterDelete = () => {
-        this.context.deleteUpdate(this.props.id)
+        this.context.deleteUpdate(this.props.match.params.childId)
         this.props.history.push('/')
     }
-    render() {
+    render() { 
         return (
+            <div className="maindiv">
             <div className="update-container">
                 <h3>
-                    <Link></Link>
+                    <AddUpdate/>
+                    <Link to={`/updates/${this.props.id}`} className="update-name">{this.props.name}</Link>
                     <button>Delete Post</button>
                 </h3>
             </div>
+            <Child id={this.props.match.params.childId}/>
+            </div>
+
+            
         )
     }
 }
@@ -24,5 +33,6 @@ class Update extends Component {
 export default withRouter(Update);
 
 Update.propTypes = {
-
+id: PropTypes.number,
+name: PropTypes.string
 }

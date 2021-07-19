@@ -19,7 +19,7 @@ class UpdateBoard extends Component {
 
                 </ul>
 
-                <NavLink to={'/addupdate'}><button type="button" className="add-update">Post Update</button></NavLink>
+                <NavLink to={'/addupdate'}><button type="button" className="add-update">Add Update</button></NavLink>
 
             </section>
         )

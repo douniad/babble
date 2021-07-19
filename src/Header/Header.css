@@ -1,24 +1,26 @@
-.landing-page {
-    @import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
-    font-family: 'Akaya Kanadaka', cursive;
-    background-color: #FFE5E2;
-}
-h1 {
-   
-    height: 100px;
-    text-decoration: none;
-    color: #B6C9F0;
-
+.Header {
+    height: 5rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
+
+h1, h1 a {    
+    color: #3C5186;
+  
+    text-decoration-color:  #9B72AA;;
+    text-decoration-style:dotted;
+  
+
+    font-family: 'Comfortaa', cursive;
+    text-align: center;
+    margin: 4rem auto 3rem auto;
+    font-size: 5rem;
+
+}
+
 
 h2 {
-
-}
-
-link:visited {
-    text-decoration: none;
+    color: #3C5186;
+    text-align: center;
+    font-family: 'Arima Madurai', cursive;
+    padding-bottom: 2rem;
 }

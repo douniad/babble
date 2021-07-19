@@ -7,5 +7,6 @@ export default React.createContext({
     addChild: () => {},
     addUpdate: () => {},
     deleteUpdate: () => {},
+    removeChild: () => {},
     setUser: () => {}
 })

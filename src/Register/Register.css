@@ -1,0 +1,50 @@
+form {
+    text-align: center;
+    width: 50%;
+    border-radius: 8px;
+    border: 2px solid #9B72AA;;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 10px 20px 10px ;
+    
+
+}
+   
+ 
+
+input {
+    padding: 2px;
+}
+
+
+label, p {
+    font-family: 'Arima Madurai', cursive;
+    color: #3C5186;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.submitregistration {
+    font-family: 'Arima Madurai', cursive;
+    color: #3C5186;
+    font-weight: bolder;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+ padding-left: 100px;
+ padding-right: 100px;
+}
+
+
+
+p a{
+    text-decoration: none;
+}
+
+p a {
+    color: #9B72AA;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

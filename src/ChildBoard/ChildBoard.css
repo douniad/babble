@@ -1,0 +1,47 @@
+.coopboard {
+    display: flex;
+    flex-direction: row;
+}
+.ChildrenBoard {
+    align-self: flex-start;
+    width: 20%;
+}
+.updatesection {
+    align-self: flex-end;
+    width: 80%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.children-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+}
+
+.childlink {
+    text-decoration: none;
+    color: #3C5186
+}
+
+.childlink:hover {
+    color: #9B72AA;
+}
+.baby {
+    height: 50px;
+    width: 50px;
+    padding-bottom: 15px;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.linknoline {
+    text-decoration: none;
+}
