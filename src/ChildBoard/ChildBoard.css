@@ -1,25 +1,25 @@
-.coopboard {
+
+.childrenlist {
     display: flex;
     flex-direction: row;
-}
-.ChildrenBoard {
-    align-self: flex-start;
-    width: 20%;
-}
-.updatesection {
-    align-self: flex-end;
-    width: 80%;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.children-list {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    margin-bottom: 10%;
+    flex-wrap: wrap;
     
+}
+
+.buttonsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.logoutsection {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
 }
 
 .childlink {
@@ -45,3 +45,22 @@ span {
 .linknoline {
     text-decoration: none;
 }
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px; 
+    display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  
+  }
+
+  @media screen and (max-width: 640px) {
+      .childrenlist {
+          display: flex;
+          flex-wrap: wrap;
+      }
+  }
+

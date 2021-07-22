@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100&family=Comfortaa:wght@700&display=swap');
+
 body {
   background-color: #FFF5DE;
   cursor: pointer;
@@ -9,8 +10,8 @@ body {
 }
 
 Button {
-  display: flex;
-  text-align: center;
+display: flex;
+text-align: center;
 padding: 10px 12px;
 border-radius: 8px;
 background-color: #FFF5DE ;

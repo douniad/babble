@@ -1,7 +1,8 @@
 import React from 'react'
+import './AddUpdate.css'
 import BabbleContext from '../BabbleContext'
 import PropTypes from 'prop-types'
-import './AddUpdate.css'
+import Logout from '../Logout/Logout'
 
 export default function AddUpdate(props) {
 
@@ -12,24 +13,25 @@ export default function AddUpdate(props) {
                 props.history.push('/childboard')
             }
             return (
-                <form onSubmit={onUpdateSubmit}>
+                <div><form onSubmit={onUpdateSubmit}>
                     <label>Update</label>
-                    <input className="LastLabel" type="text" name="update" required/>
+                    <input className="LastLabel" type="text" name="text" required/>
                     <label>Child</label>
-                    <select name="childId">
+                    <select name="child_id">
                         {value.children.map(child => <option key={child.id} value={child.id}>
                             {child.name}
                         </option>)}
                     </select>
-                    <label>Signature</label>
-                    <input className="signature" type="text" name="signature" required/>
                     <button className="UpdateButton">Post Update</button>
                 </form>
+                <footer className="footer">
+                <Logout/>
+                </footer>
+                </div>
             )
         }
         }
     </BabbleContext.Consumer>
-
 }
 
 AddUpdate.propTypes = {

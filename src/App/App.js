@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import { Route } from "react-router-dom";
-import BabbleContext from '../BabbleContext';
-import AddChild from '../AddChild/AddChild';
-import AddUpdate from '../AddUpdate/AddUpdate';
-import Login from '../Login/Login'
-import Register from '../Register/Register'
-import FirstPage from '../FirstPage/FirstPage'
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+import './App.css'
+import AddChild from '../AddChild/AddChild'
+import AddUpdate from '../AddUpdate/AddUpdate'
+import AuthApiService from '../Services/Auth-Api-Service'
+import BabbleContext from '../BabbleContext'
 import ChildBoard from '../ChildBoard/ChildBoard'
-import ClickUpdate from '../ClickUpdate/ClickUpdate'
+import config from '../config'
 import ExitUpdate from '../ExitUpdate/ExitUpdate'
-import config from "../config"
-import UpdateBoard from '../UpdateBoard/UpdateBoard';
+import FirstPage from '../FirstPage/FirstPage'
+import Header from '../Header/Header'
+import IdleService from '../Services/Idle-Service'
+import Login from '../Login/Login'
+import Logout from '../Logout/Logout'
+import Nav from '../Nav/Nav'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
+import Register from '../Register/Register'
 import TokenService from '../Services/Token-Service'
-import IdleService from '../Services/Idle-Service'
-import AuthApiService from '../Services/Auth-Api-Service'
-import Nav from '../Nav/Nav'
-import Header from '../Header/Header';
-
-import './App.css'
 import Update from '../Update/Update'
+import UpdateBoard from '../UpdateBoard/UpdateBoard'
 
 
 const { v4: uuidv4 } = require('uuid')
@@ -37,41 +36,22 @@ class App extends Component {
 
     componentDidMount() {
 
-
-        /* if a user is logged in */
         if (TokenService.hasAuthToken()) {
-
-            /*
-              Tell the token service to read the JWT, looking at the exp value
-              and queue a timeout just before the token expires
-            */
             TokenService.queueCallbackBeforeExpiry(() => {
-                /* the timoue will call this callback just before the token expires */
                 AuthApiService.postRefreshToken()
             })
         }
     }
 
-
-
     logoutFromIdle = () => {
-        /* remove the token from localStorage */
         TokenService.clearAuthToken()
-        /* remove any queued calls to the refresh endpoint */
         TokenService.clearCallbackBeforeExpiry()
-        /* remove the timeouts that auto logout when idle */
         IdleService.unRegisterIdleResets()
-        /*
-          react won't know the token has been removed from local storage,
-          so we need to tell React to rerender
-        */
         this.forceUpdate()
     }
 
-
     addChild = (e) => {
         e.preventDefault()
-        console.log('hello world')
         const name = e.target.name.value
         const child = { name, id: uuidv4() }
         fetch(config.API_ENDPOINT + '/children', {
@@ -91,7 +71,6 @@ class App extends Component {
     }
 
     removeChild = (id) => {
-        console.log('hello')
         fetch(config.API_ENDPOINT + `/children/${id}`, {
             method: 'delete',
             headers: {
@@ -105,13 +84,12 @@ class App extends Component {
             })
     }
 
-    AddUpdate = (e) => {
+    addUpdate = (e) => {
         e.preventDefault()
-        const name = e.target.name.value
-        const content = e.target.content.value
-        const childId = e.target.childId.value
-        //const date = 
-        const update = { name, content, childId, id: uuidv4(), }
+        const text = e.target.text.value
+        const child_id = e.target.child_id.value
+        const date = new Date()
+        const update = { text, date, child_id }
         fetch(config.API_ENDPOINT + '/updates', {
             method: 'post',
             headers: {
@@ -149,9 +127,7 @@ class App extends Component {
         })
     }
 
-
     deleteUpdate = (id) => {
-        console.log('hello')
         fetch(config.API_ENDPOINT + `/updates/${id}`, {
             method: 'delete',
             headers: {
@@ -176,27 +152,19 @@ class App extends Component {
             setUpdates: this.setUpdates,
             setChildren: this.setChildren,
             setUser: this.setUser,
-            removeChild: this.removeChild,
-
+            removeChild: this.removeChild
         }
 
-
         return (
+
             <BabbleContext.Provider value={value}>
 
-                
-
                 <div className="big-container">
-                   
-                    
-                    {this.state.user ? <Nav /> : <Header/> }
 
-                    
+                    {this.state.user ? <Nav /> : <Header />}
 
                     <main>
-                    <Route exact path="/childboard" render={() => 
-                        <ChildBoard children={this.state.children} />}/>
-
+                        <PrivateRoute exact path="/childboard" component={ChildBoard} />
                         <PrivateRoute path="/updates/:updateId" render={(routeProps) => {
                             const updateId = routeProps.match.paramsms.updateId
                             const selectedUpdate = this.state.updates.find(update => update.id === parseInt(updateId)) || {}
@@ -204,24 +172,18 @@ class App extends Component {
                             />
                         }}
                         />
-                       <PrivateRoute path="/children/:childId" component={Update}
-                            
-                        />
+                        <PrivateRoute path="/children/:childId" component={Update}/>
                         <PrivateRoute exact path="/updateboard" render={() =>
-                            <UpdateBoard updates={this.state.updates}
-                            />
-                        }
-                        />
+                            <UpdateBoard updates={this.state.updates}/>
+                        }/>
                         <Route exact path={'/'} component={FirstPage} />
                         <PublicOnlyRoute path={'/login'} component={Login} />
                         <PublicOnlyRoute path={'/register'} component={Register} />
                         <PrivateRoute path={'/addchild'} component={AddChild} />
                         <PrivateRoute path={'/addupdate'} component={AddUpdate} />
-                        <PrivateRoute path={'/updateboard'} component={AddUpdate}/>
- 
                     </main>
+                    
                 </div>
-
 
             </BabbleContext.Provider>
         )

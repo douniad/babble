@@ -40,7 +40,7 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <div className="RegistrationDiv">
+      <div className="registrationdiv">
       <form
         className='RegistrationForm'
         onSubmit={this.handleSubmit}

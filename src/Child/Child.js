@@ -7,9 +7,10 @@ class Child extends Component {
     static contextType = BabbleContext
  
     afterRemove = () => {
-        this.context.removeChild(this.props.id)
+        this.context.removeChild(this.props.childId)
         this.props.history.push('/childboard')
     }
+    
     render() {
         return (
             <div className="child-container">
