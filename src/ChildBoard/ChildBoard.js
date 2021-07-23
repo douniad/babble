@@ -4,11 +4,8 @@ import PropTypes from 'prop-types'
 import config from '../config'
 import BabbleContext from '../BabbleContext'
 import './ChildBoard.css'
-import baby from '../baby.png'
 import TokenService from '../Services/Token-Service'
 import Logout from '../Logout/Logout'
-import AddUpdate from '../AddUpdate/AddUpdate'
-import Update from '../Update/Update'
 
 class ChildBoard extends Component {
 static contextType = BabbleContext
