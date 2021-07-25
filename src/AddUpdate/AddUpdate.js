@@ -2,7 +2,7 @@ import React from 'react'
 import './AddUpdate.css'
 import BabbleContext from '../BabbleContext'
 import PropTypes from 'prop-types'
-import Logout from '../Logout/Logout'
+
 
 export default function AddUpdate(props) {
 
@@ -24,9 +24,7 @@ export default function AddUpdate(props) {
                     </select>
                     <button className="UpdateButton">Post Update</button>
                 </form>
-                <footer className="footer">
-                <Logout/>
-                </footer>
+               
                 </div>
             )
         }
