@@ -1,11 +1,7 @@
-
-.navtry {
-    height: 5rem;
-    display: flex;
-}
-
-h1, h1 a {     
+.babbleheader, .babbleheader a {     
     color: #3C5186;
+    text-decoration: dotted;
+    text-decoration-color: #F25967;
     font-family: 'Comfortaa', cursive;
     text-align: center;
     margin: 4rem auto 3rem auto;
@@ -21,6 +17,7 @@ h2 {
 
 .firstpage {
     display: flex;
+    flex-direction: row;
     text-align: center;
     justify-content: space-evenly;
     cursor: pointer;
@@ -47,5 +44,18 @@ font-weight: bolder;
 
 .linknoline {
     text-decoration: none;
+}
+
+.moana {
+    width: 30%;
+    height: 30%;
+    margin-top: 5%;
+}
+
+@media screen and (min-width: 864px) {
+
+    .firstpage {
+        margin-bottom: 5%;
+    }
 }
 

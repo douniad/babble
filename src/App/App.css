@@ -29,3 +29,7 @@ Button:hover {
   background-color: #C6B4CE;
   border: 3px solid #C6B4CE;
 }
+
+main {
+  text-align: center;
+}
