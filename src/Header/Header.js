@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Header.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import BabbleContext from '../BabbleContext';
 import TokenService from '../Services/Token-Service';
 import IdleService from '../Services/Idle-Service';
