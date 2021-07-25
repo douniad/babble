@@ -4,11 +4,8 @@ import PropTypes from 'prop-types'
 import config from '../config'
 import BabbleContext from '../BabbleContext'
 import './ChildBoard.css'
-import baby from '../baby.png'
 import TokenService from '../Services/Token-Service'
-import Logout from '../Logout/Logout'
-import AddUpdate from '../AddUpdate/AddUpdate'
-import Update from '../Update/Update'
+import '../baby.png'
 
 class ChildBoard extends Component {
 static contextType = BabbleContext
@@ -55,9 +52,6 @@ static contextType = BabbleContext
            
             <NavLink className="linknoline" to={`/addupdate`}> <button type="button" className="add-update">Add Update</button> </NavLink>
             </section>
-            <footer className="footer">
-        <Logout/>
-        </footer>
         </div>
     )
     }

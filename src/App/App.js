@@ -12,8 +12,6 @@ import FirstPage from '../FirstPage/FirstPage'
 import Header from '../Header/Header'
 import IdleService from '../Services/Idle-Service'
 import Login from '../Login/Login'
-import Logout from '../Logout/Logout'
-import Nav from '../Nav/Nav'
 import PrivateRoute from '../Utils/PrivateRoute'
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import Register from '../Register/Register'
@@ -161,7 +159,7 @@ class App extends Component {
 
                 <div className="big-container">
 
-                    {this.state.user ? <Nav /> : <Header />}
+                    <Header />
 
                     <main>
                         <PrivateRoute exact path="/childboard" component={ChildBoard} />

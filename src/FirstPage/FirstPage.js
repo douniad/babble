@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import './FirstPage.css'
-import { Link } from 'react-router-dom'
 
 class FirstPage extends Component {
     render() {
@@ -9,9 +8,8 @@ class FirstPage extends Component {
             <div className="landing-page">
                 
                     <h1 className="babble-header">
-                        <Link className="link" to='/'>babble</Link>
+                        babble
                     </h1>
-               
                 <h2>All about your little ones.</h2>
              
            

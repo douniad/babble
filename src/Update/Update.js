@@ -7,6 +7,7 @@ import AddUpdate from '../AddUpdate/AddUpdate'
 import config from '../config'
 import TokenService from '../Services/Token-Service'
 
+
 class Update extends Component {
 
     static contextType = BabbleContext
@@ -38,7 +39,30 @@ class Update extends Component {
     render() {
         
         return (
+
             <div className="maindiv">
+<h3>
+                        <AddUpdate history={this.props.history} />
+                        <Link to={`/updates/${this.props.id}`} className="update-name">{this.props.name}</Link>
+                        <button>Delete Post</button>
+                    </h3>
+
+            {this.state.updates.map(update => (
+                <ul className="differentsummaries">
+                    <li className="summarydate">{update.text}</li>
+                </ul>
+            ))}
+        </div>
+
+
+
+
+
+
+
+
+
+           /* <div className="maindiv">
                 <div className="update-container">
                     <h3>
                         <AddUpdate history={this.props.history} />
@@ -46,10 +70,9 @@ class Update extends Component {
                         <button>Delete Post</button>
                     </h3>
                 </div>
-                <Child id={this.props.match.params.childId} />
-                a{JSON.stringify(this.state.updates)} 
+                <Child id={Number(this.props.match.params.childId)} />
 
-            </div>
+            </div>*/
 
 
         )
