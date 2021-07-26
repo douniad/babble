@@ -18,6 +18,7 @@ import Register from '../Register/Register'
 import TokenService from '../Services/Token-Service'
 import Update from '../Update/Update'
 import UpdateBoard from '../UpdateBoard/UpdateBoard'
+import GettingStarted from '../GettingStarted/GettingStarted'
 
 
 const { v4: uuidv4 } = require('uuid')
@@ -177,6 +178,7 @@ class App extends Component {
                         <Route exact path={'/'} component={FirstPage} />
                         <PublicOnlyRoute path={'/login'} component={Login} />
                         <PublicOnlyRoute path={'/register'} component={Register} />
+                        <PublicOnlyRoute path={'/gettingstarted'} component={GettingStarted}/>
                         <PrivateRoute path={'/addchild'} component={AddChild} />
                         <PrivateRoute path={'/addupdate'} component={AddUpdate} />
                     </main>

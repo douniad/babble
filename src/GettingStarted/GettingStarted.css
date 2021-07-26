@@ -1,0 +1,22 @@
+.guide {
+    font-family: 'Comfortaa', cursive;
+    color: #3C5186;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+.bold {
+    text-decoration: underline;
+}
+
+span {
+    margin-bottom: 5%;
+}

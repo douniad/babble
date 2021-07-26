@@ -23,7 +23,7 @@ h2 {
     cursor: pointer;
 }
 
-.registerbutton, .loginbutton {
+.registerbutton, .loginbutton, .gettingstartedbutton {
 text-decoration: none;
 margin-top: 50px;
 padding: 1rem 2rem;

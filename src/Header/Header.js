@@ -46,6 +46,10 @@ class Header extends Component {
         return (
             <div>
                 <Link className="headernavlinks"
+                to='/gettingstarted'>
+                    Getting Started
+                </Link>
+                <Link className="headernavlinks"
                     to='/register'>
                     Register
                 </Link>
