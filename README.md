@@ -8,7 +8,7 @@ This repo is the front-end client, built in React. You can see the app live at
 
 https://babble-ten.vercel.app/
 
-The backend server can be found at 
+The backend server can be found at https://github.com/douniad/babble-server.
 
 ### Demo Account Details
 
@@ -25,14 +25,18 @@ Happy babbling!
 
 ## Technology
 
-#### Front End
-• React
+### Front End
 
+#### React
+
+• Create React App
 • HTML5
 • CSS3 (scratch - no frameworks)
+
 #### Testing
 
 • Jest (screen captures & smoke tests)
+
 #### Production
 
 • Deployed via Vercel
