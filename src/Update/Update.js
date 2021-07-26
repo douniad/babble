@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import BabbleContext from '../BabbleContext'
-import Child from '../Child/Child'
 import PropTypes from 'prop-types'
 import AddUpdate from '../AddUpdate/AddUpdate'
 import config from '../config'
