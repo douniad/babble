@@ -6,10 +6,8 @@ import TokenService from '../Services/Token-Service'
 import BabbleContext from '../BabbleContext'
 
 
-
-
 class FirstPage extends Component {
-
+    
     static contextType = BabbleContext
 
     renderLoggedOutFirstPage() {
@@ -25,9 +23,12 @@ class FirstPage extends Component {
 
 
     render() {
+
         return (
 
             <div className="landingpage">
+
+                
                 <section className="headersection">
                     <h1 className="babbleheader">
                         babble
