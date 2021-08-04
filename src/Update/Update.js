@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, withRouter} from 'react-router-dom'
 import BabbleContext from '../BabbleContext'
 import PropTypes from 'prop-types'
 import AddUpdate from '../AddUpdate/AddUpdate'
@@ -23,7 +23,7 @@ class Update extends Component {
             .then((updates = []) => {
                 if (updates.error) {
                     return
-                } 
+                }
                 this.setState({ updates })
             })
 
@@ -36,43 +36,22 @@ class Update extends Component {
 
 
     render() {
-        
+console.log(this.state)
         return (
 
-            <div className="maindiv">
-<h3>
-                        <AddUpdate history={this.props.history} />
-                        <Link to={`/updates/${this.props.id}`} className="update-name">{this.props.name}</Link>
-                        <button>Delete Post</button>
-                    </h3>
-
-            {this.state.updates.map(update => (
-                <ul className="differentsummaries">
-                    <li className="summarydate">{update.text}</li>
-                </ul>
-            ))}
-        </div>
-
-
-
-
-
-
-
-
-
-           /* <div className="maindiv">
-                <div className="update-container">
+                <div className="maindiv">
                     <h3>
                         <AddUpdate history={this.props.history} />
                         <Link to={`/updates/${this.props.id}`} className="update-name">{this.props.name}</Link>
                         <button>Delete Post</button>
                     </h3>
+
+                    {this.state.updates.map(update => (
+                        <ul key={update.id} className="differentsummaries">
+                            <li className="summarydate">{update.text}</li>
+                        </ul>
+                    ))}
                 </div>
-                <Child id={Number(this.props.match.params.childId)} />
-
-            </div>*/
-
 
         )
     }

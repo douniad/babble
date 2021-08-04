@@ -13,17 +13,21 @@ class Child extends Component {
     
     render() {
         return (
+ 
+
             <div className="child-container">
                 <h3>
                     <Link className="linknoline" to={`/children/${this.props.id}`}></Link>
                 </h3>
                 <button onClick={() => this.afterRemove()} type="button" className="remove-child">Remove Child</button>
             </div>
+
+
         )
     }
 }
 
-export default withRouter(Child);
+export default withRouter(Child)
 
 Child.propTypes = {
     id: PropTypes.number

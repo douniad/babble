@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SummaryBoard from './SummaryBoard';
-import {MemoryRouter} from 'react-router-dom'
+import Header from './Header';
+import { Link } from 'react-router-dom'
 
-describe('Summary Component', () => {
+describe('Header Component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-    <MemoryRouter>
-    < SummaryBoard/>
-    </MemoryRouter>
-     ,div);
+        <Header>
+          <Link to='/login'>login</Link>
+        </Header>
+  
+      , div
+    );
     ReactDOM.unmountComponentAtNode(div);
   });
 })

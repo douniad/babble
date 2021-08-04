@@ -7,7 +7,6 @@ import AuthApiService from '../Services/Auth-Api-Service'
 import BabbleContext from '../BabbleContext'
 import ChildBoard from '../ChildBoard/ChildBoard'
 import config from '../config'
-import ExitUpdate from '../ExitUpdate/ExitUpdate'
 import FirstPage from '../FirstPage/FirstPage'
 import Header from '../Header/Header'
 import IdleService from '../Services/Idle-Service'
@@ -165,10 +164,9 @@ class App extends Component {
                     <main>
                         <PrivateRoute exact path="/childboard" component={ChildBoard} />
                         <PrivateRoute path="/updates/:updateId" render={(routeProps) => {
-                            const updateId = routeProps.match.paramsms.updateId
-                            const selectedUpdate = this.state.updates.find(update => update.id === parseInt(updateId)) || {}
-                            return <ExitUpdate selectedUpdate={selectedUpdate} {...routeProps}
-                            />
+                            
+                            
+                        
                         }}
                         />
                         <PrivateRoute path="/children/:childId" component={Update}/>

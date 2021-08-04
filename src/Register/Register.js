@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../Services/Auth-Api-Service'
-import {NavLink} from 'react-router-dom'
 import './Register.css'
+import {  NavLink } from 'react-router-dom'
 
 
 export default class RegistrationForm extends Component {
@@ -40,6 +40,7 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
+
       <div className="registrationdiv">
       <form
         className='RegistrationForm'
@@ -91,7 +92,7 @@ export default class RegistrationForm extends Component {
       <p>Already have an account? <NavLink to={'/login'}>Log in</NavLink></p>
       </div>
       
-      
+
     )
   }
 }

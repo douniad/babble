@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import AuthApiService from '../Services/Auth-Api-Service'
 import { Button, Input } from '../Utils/Utils'
 import BabbleContext from '../BabbleContext'
-import {NavLink} from 'react-router-dom'
 import './Login.css'
+import { NavLink } from 'react-router-dom'
 
 export default class Login extends Component {
   static defaultProps = {
@@ -36,6 +36,7 @@ static contextType = BabbleContext
   render() {
     const { error } = this.state
     return (
+
       <div className="logindiv">
       <form
         className='LoginForm'
@@ -70,8 +71,9 @@ static contextType = BabbleContext
           Login
         </Button>
       </form>
-<p>Don't have an account yet? <NavLink to={'/register'}>Register</NavLink></p>
+      <p>Don't have an account yet? <NavLink to={'/register'}>Register</NavLink></p>
       </div>
+
     )
   }
 }

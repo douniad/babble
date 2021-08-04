@@ -33,6 +33,7 @@ class ChildBoard extends Component {
     }
     render() {
         return (
+
             <div className="childboard">
 
                 <ul className="childrenlist">
@@ -52,6 +53,7 @@ class ChildBoard extends Component {
                 </section>
                 
             </div>
+
         )
     }
 }

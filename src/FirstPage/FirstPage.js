@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import './FirstPage.css'
 import '../moana.png'
 import TokenService from '../Services/Token-Service'
@@ -11,11 +11,13 @@ class FirstPage extends Component {
     static contextType = BabbleContext
 
     renderLoggedOutFirstPage() {
-        return <div className="firstpage">
+        return
+        <div className="firstpage">
             <NavLink className="linknoline" to={'/gettingstarted'}><button type="button" className="gettingstartedbutton">Getting Started</button></NavLink>
             <NavLink className="linknoline" to={'/register'}><button type="button" className="registerbutton">Register</button></NavLink>
             <NavLink className="linknoline" to={'/login'}><button type="button" className="loginbutton">Log In</button></NavLink>
         </div>
+
     }
 
     renderLoggedInFirstPage() {

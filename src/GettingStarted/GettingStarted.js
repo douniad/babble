@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom'
 class GettingStarted extends Component {
     render() {
         return(
+
             <div className="guide">
                <span> <h1>babble - A Guide</h1>
 
@@ -19,6 +20,7 @@ class GettingStarted extends Component {
 
 
             </div>
+
         )
     }
 }
